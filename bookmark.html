@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admitted</title>
+    <link rel="stylesheet" href="commonStyles.css" />
+    <style>
+      .bg{
+        background-color: brown;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="links">
+      <div><a href="index.html">Home</a></div>
+      <div><a href="applied.html">Applied Jobs</a></div>
+      <div><a href="bookmark.html">Bookmarks</a></div>
+    </div>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Job Applied</th>
+          </tr>
+        </thead>
+        <tbody id="body"></tbody>
+      </table>
+    </main>
+  </body>
+  <script>
+    //you need to code here
+
+      let bookmarkDataLS =JSON.parse(localStorage.getItem("bookmarkData"));
+
+      // bookmarkDataLS.forEach(function(elem){
+      //   let tr=document.createElement("tr");
+
+      //   let td1=document.createElement("td");
+      //   td1.innerText=elem.personName;
+
+      //   let td2=document.createElement("td");
+      //   td2.innerText=elem.personEmail;
+
+      //   let td3=document.createElement("td");
+      //   td3.innerText=elem.personRole;
+        
+      //   tr.append(td1,td2,td3);
+      //   document.querySelector("tbody").append(tr);
+
+      // });
+
+      bookmarkDataLS.forEach(function(elem){
+        document.querySelector("tbody").innerHTML=`<tr><td>${elem.personName}</td><td>${elem.personEmail}</td><td class="bg">${elem.personRole}</td></tr>`
+      });
+
+      // we can use ``instead of "" for declaring variables
+      // inside `backtick` we can define variables like---
+      // (`hello my name is ${personName}`)
+      
+      // we can use this method when there is no addEventListener
+  </script>
+</html>
